@@ -140,7 +140,7 @@ elif [[ $FZF_PROMPT =~ "'"$prompt_rename_window"'" ]]; then
 fi'
 
 handle_new='if [[ $FZF_PROMPT =~ '"$prompt_sessions"' ]]; then 
-  echo "execute-silent(tmux new-session -ds "{q}")+print-query"
+  echo "execute-silent(tmux new-session -ds "{q}" {q})+print-query"
 fi'
 
 handle_quit='load_sessions="clear-query+enable-search+change-prompt('"$prompt_sessions"' > )+reload('"$list_sessions"')+change-preview(tmux capture-pane -ep -t \{1})"
